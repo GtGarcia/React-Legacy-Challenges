@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import CatList from './CatList';
  
-class CatIndex {
- constructor(){
+class CatIndex extends Component{
+ constructor(props){
    super(props)
-   state : {
+   this.state = {
      breeds: ['persian', 'siamese', 'maine coon', 'ragdoll', 'scottish fold', 'sphynx', 'british shorthair', 'bengal', 'american shorthair']
    }
  }
 
+ render(){
    return (
      <div>
-      <CatList cats={breeds} />
+        {this.state.breeds.map((cat) => (<p>{cat}</p>))}
      </div>
    );
-
+   }
 }
 
+export default CatIndex;
